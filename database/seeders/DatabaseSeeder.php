@@ -14,12 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Admin::factory(10)->create();
-
-        Admin::factory()->create([
-            'name' => 'Admin1',
-            'email' => 'admin1@hello.cse',
-            'password' => Hash::make('password'),
+        $this->call([
+            AdminSeeder::class,
+            ProfileSeeder::class,
         ]);
     }
 }
