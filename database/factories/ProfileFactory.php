@@ -23,20 +23,11 @@ class ProfileFactory extends Factory
      */
     public function definition(): array
     {
+        /* Impossible to add random pictures as the picture source for the faker is down and has not been replaced */
         return [
             'firstname' => fake()->firstName(),
             'lastname' => fake()->lastName(),
             'status' => fake()->randomElement(['inactive', 'awaiting', 'active']),
         ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     */
-    public function unverified(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
     }
 }
